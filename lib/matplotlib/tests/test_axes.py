@@ -5599,3 +5599,17 @@ def test_empty_errorbar_legend():
 def test_plot_columns_cycle_deprecation():
     with pytest.warns(MatplotlibDeprecationWarning):
         plt.plot(np.zeros((2, 2)), np.zeros((2, 3)))
+
+
+@image_comparison(baseline_images=['permute'], extensions=['png'],
+style = 'default')
+def test_permute():
+    a = [x for x in range(10)]
+    b = np.square(a)
+
+    plt.xlabel('factors')
+    plt.ylabel('squares')
+    plt.title('natural numbers and their squares')
+    ax = plt.gca()
+    plt.plot(a,b)
+    ax.permute()
