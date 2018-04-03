@@ -8016,13 +8016,13 @@ class Axes(_AxesBase):
         return mtri.triplot(self, *args, **kwargs)
     triplot.__doc__ = mtri.triplot.__doc__
 
-def permute(self): 
-    if (len (self.lines) > 0):
-        orig_xlim, orig_ylim = self.get_xlim(), self.get_ylim()
-        orig_xdata = self.lines[0].get_xdata()
-        orig_ydata = self.lines[0].get_ydata()
-        ylabel, xlabel = self.get_ylabel(), self.get_xlabel()
-        self.set_xlim(orig_ylim), self.set_ylim(orig_xlim)
-        self.set_xlabel(ylabel), self.set_ylabel(xlabel)
-        self.lines[0].set_xdata(orig_ydata)
-        self.lines[0].set_ydata(orig_xdata)
+    def permute(self): 
+        if (len (self.lines) > 0):
+            orig_xlim, orig_ylim = self.get_xlim(), self.get_ylim()
+            orig_xdata = self.lines[0].get_xdata()
+            orig_ydata = self.lines[0].get_ydata()
+            ylabel, xlabel = self.get_ylabel(), self.get_xlabel()
+            self.set_xlim(orig_ylim), self.set_ylim(orig_xlim)
+            self.set_xlabel(ylabel), self.set_ylabel(xlabel)
+            self.lines[0].set_xdata(orig_ydata)
+            self.lines[0].set_ydata(orig_xdata)
